@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Descricao:</strong>
+  <%= @part.descricao %>
+</p>
+
+<p>
+  <strong>Modelo:</strong>
+  <%= @part.modelo %>
+</p>
+
+<p>
+  <strong>P compra:</strong>
+  <%= @part.p_compra %>
+</p>
+
+<p>
+  <strong>P venda:</strong>
+  <%= @part.p_venda %>
+</p>
+
+<p>
+  <strong>Quantidade:</strong>
+  <%= @part.quantidade %>
+</p>
+
+<p>
+  <strong>Lucro:</strong>
+  <%= @part.lucro %>
+</p>
+
+<%= link_to 'Edit', edit_part_path(@part) %> |
+<%= link_to 'Back', parts_path %>
