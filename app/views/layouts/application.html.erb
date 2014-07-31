@@ -1,14 +1,26 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html>
 <head>
-  <title>Ckp</title>
+  <title>Check-up Micros</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
+
 <body>
+<h1 align="center">Sistema para Controle de Assistencia Técnica</h1>
+<hr>
+Cadastro
+<hr>
 
-<%= yield %>
-
+<%= link_to 'Clientes', clients_path %>
+<%= link_to 'Serviço', services_path %>
+<%= link_to 'Peças', parts_path %>
+<%= link_to 'Ordem de Serviço', parts_path %>
+<hr>
+  <%= yield %>
 </body>
 </html>
+
+
+ 
