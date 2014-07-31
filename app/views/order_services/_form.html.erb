@@ -1,0 +1,32 @@
+<%= form_for(@order_service) do |f| %>
+  <% if @order_service.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@order_service.errors.count, "error") %> prohibited this order_service from being saved:</h2>
+
+      <ul>
+      <% @order_service.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :client_id %><br>
+    <%= f.select :client_id, Client.all.collect {|p| [ p.nome.capitalize, p.id ] }, {include_blank: 'Escolha um Cliente'} %>
+  </div>
+  <div class="field">
+    <%= f.label :part_id %><br>
+    <%= f.select :part_id, Part.all.collect {|p| [ p.descricao.capitalize, p.id ] }, {include_blank: 'Escolha uma peça'} %>
+  </div>
+  <div class="field">
+    <%= f.label :service_id %><br>
+    <%= f.select :service_id, Service.all.collect {|p| [ p.descricao.capitalize, p.id ] }, {include_blank: 'Escolha um Cliente'} %>
+  </div>
+
+  
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

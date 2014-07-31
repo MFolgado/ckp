@@ -1,13 +1,19 @@
 Rails.application.routes.draw do
   
+  resources :order_services
+
   resources :parts
 
   resources :services
 
   root 'home#index'
 
-  resources :clients
-
+  resources :clients do 
+    collection do
+      get 'busca'
+      post 'busca'
+    end
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

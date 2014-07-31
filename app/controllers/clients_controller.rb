@@ -7,6 +7,9 @@ class ClientsController < ApplicationController
     @clients = Client.all
   end
 
+  def busca
+    @clients = params["nome_busca"] ? Client.busca(params["nome_busca"]) : []
+  end
   # GET /clients/1
   # GET /clients/1.json
   def show
@@ -69,6 +72,6 @@ class ClientsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def client_params
-      params.require(:client).permit(:nome, :endereco, :bairro, :cidade, :uf, :cep, :tel)
+      params.require(:client).permit(:nome, :endereco, :bairro, :cidade, :uf, :cep, :tel, :nome_busca)
     end
 end

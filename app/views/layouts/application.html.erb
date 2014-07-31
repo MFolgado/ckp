@@ -16,9 +16,16 @@ Cadastro
 <%= link_to 'Clientes', clients_path %>
 <%= link_to 'Serviço', services_path %>
 <%= link_to 'Peças', parts_path %>
-<%= link_to 'Ordem de Serviço', parts_path %>
+<%= link_to 'Ordem de Serviço', order_services_path %>
 <hr>
-  <%= yield %>
+Busca
+<hr>
+<%= link_to 'Clientes', busca_clients_path %>  
+<hr>
+
+
+<%= yield %>
+
 </body>
 </html>
 
