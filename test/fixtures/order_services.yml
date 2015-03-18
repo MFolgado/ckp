@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  client_id: 
+  part_id: 
+  service_id: 
+
+two:
+  client_id: 
+  part_id: 
+  service_id: 

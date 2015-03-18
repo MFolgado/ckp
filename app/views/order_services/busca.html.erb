@@ -3,6 +3,7 @@
   <div class="field">
     <%= label_tag "nome_busca" %><br>
     <%= text_field_tag "nome_busca" , 'Digite um nome'%>
+
   </div>
 
   <div class="actions">
@@ -14,17 +15,17 @@
 <table align="center">
 	<tr>
 		<th> Nome </th>
-		<th> Telefone</th>
+		<th> Servico</th>
 	</tr>
 	
-	<% @clients.each do |c| %>
+	<% @order.each do |c| %>
 	<tr>
-		<td> <%= c.nome%> </td>
-		<td> <%= c.tel%> </td>
+		<td> <%= c.client.nome %> </td>
+		<td> <%= c.service.descricao %> </td>
 	</tr>
 	<% end %>
 	
-	<% if @clients.count==0 %>
+	<% if @order.count==0 %>
 		<em>Dado não localizado</em>
 	<%end%>
 

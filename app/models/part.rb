@@ -1,3 +1,3 @@
 class Part < ActiveRecord::Base
-	has_many :order_service
+	has_many :order_services
 end

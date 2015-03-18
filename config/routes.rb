@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
   
-  resources :order_services
+  resources :order_services do
+    collection do 
+      get 'busca'
+      post 'busca'
+    end
+  end
 
   resources :parts
 

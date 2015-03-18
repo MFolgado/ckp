@@ -12,6 +12,10 @@ class OrderServicesController < ApplicationController
   def show
   end
 
+  def busca
+   @order = params["nome_busca"] ? OrderService.busca(params["nome_busca"]) : []
+  end
+
   # GET /order_services/new
   def new
     @order_service = OrderService.new
@@ -69,6 +73,7 @@ class OrderServicesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def order_service_params
-      params.require(:order_service).permit(:client_id, :part_id, :service_id)
+      params.require(:order_service).permit(:client_id, :part_id, :service_id, :created_at, :nome_busca)
     end
+
 end

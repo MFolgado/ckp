@@ -13,20 +13,32 @@
 
   <div class="field">
     <%= f.label :client_id %><br>
-    <%= f.select :client_id, Client.all.collect {|p| [ p.nome.capitalize, p.id ] }, {include_blank: 'Escolha um Cliente'} %>
-  </div>
-  <div class="field">
-    <%= f.label :part_id %><br>
-    <%= f.select :part_id, Part.all.collect {|p| [ p.descricao.capitalize, p.id ] }, {include_blank: 'Escolha uma peça'} %>
-  </div>
-  <div class="field">
-    <%= f.label :service_id %><br>
-    <%= f.select :service_id, Service.all.collect {|p| [ p.descricao.capitalize, p.id ] }, {include_blank: 'Escolha um Cliente'} %>
+    <%= f.select :client_id, 
+                 Client.all.collect {|p| [ p.nome.capitalize, p.id ] },
+                 {include_blank: 'Escolha um Cliente'} %>
   </div>
 
+  <div class="field">
+    <%= f.label :part_id %><br>
+    <%= f.select :part_id, 
+                 Part.all.collect {|p| [ p.descricao.capitalize, p.id ] }, 
+                 {include_blank: 'Escolha uma peça'}%>
+    <%= submit_tag value="Incluir Peça"%>
+  </div>
+
+  <div class="field">
+    <%= f.label :service_id %><br>
+    <%= f.select :service_id, 
+                 Service.all.collect {|p| [ p.descricao.capitalize, p.id ] }, 
+                 {include_blank: 'Escolha um Cliente'} %>
+    <%= submit_tag value="Incluir Serviço"%>
   
+  </div>
+
+ 
 
   <div class="actions">
     <%= f.submit %>
   </div>
+
 <% end %>

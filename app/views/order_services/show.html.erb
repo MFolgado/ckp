@@ -2,17 +2,17 @@
 
 <p>
   <strong>Client:</strong>
-  <%= @order_service.client.to_s %>
+  <%= @order_service.client.nome %>
 </p>
 
 <p>
   <strong>Part:</strong>
-  <%= @order_service.part %>
+  <%= @order_service.part.descricao %>
 </p>
 
 <p>
   <strong>Service:</strong>
-  <%= @order_service.service %>
+  <%= @order_service.service.descricao %>
 </p>
 
 <%= link_to 'Edit', edit_order_service_path(@order_service) %> |

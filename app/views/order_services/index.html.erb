@@ -6,6 +6,7 @@
       <th>Client</th>
       <th>Part</th>
       <th>Service</th>
+      <th>Data</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -13,9 +14,11 @@
   <tbody>
     <% @order_services.each do |order_service| %>
       <tr>
-        <td><%= order_service.client.nome %></td>
+        <td><%= order_service.client.name %></td>
         <td><%= !order_service.part.nil? ? order_service.part.descricao : "Não tem peças" %></td>
-        <td><%= order_service.service.descricao %></td>
+        <td><%= !order_service.service.nil? ? order_service.service.descricao : "Não tem serviço" %></td>
+        <td><%= order_service.created_at%></td>
+        
         <td><%= link_to 'Show', order_service %></td>
         <td><%= link_to 'Edit', edit_order_service_path(order_service) %></td>
         <td><%= link_to 'Destroy', order_service, method: :delete, data: { confirm: 'Are you sure?' } %></td>
